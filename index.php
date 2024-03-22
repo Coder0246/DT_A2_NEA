@@ -20,7 +20,8 @@ $stmt_site_reviews->execute();
 $siteReviews = $stmt_site_reviews->fetchAll(PDO::FETCH_ASSOC);
 
 // Fetch product reviews
-$stmt_product_reviews = $pdo->prepare("SELECT pr.*, u.username FROM product_reviews pr JOIN users u ON pr.user_id = u.id ORDER BY pr.review_date DESC LIMIT 5");
+$stmt_product_reviews = $pdo->prepare
+("SELECT pr.*, u.username FROM product_reviews pr JOIN users u ON pr.user_id = u.id ORDER BY pr.review_date DESC LIMIT 5");
 $stmt_product_reviews->execute();
 $productReviews = $stmt_product_reviews->fetchAll(PDO::FETCH_ASSOC);
 ?>

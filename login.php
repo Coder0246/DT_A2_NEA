@@ -108,18 +108,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
 </div>
 
-
-<form>
-      <label>Username <span>Choose a username</span></label>
-      <input type="text" name="username" value="" >
-      <p class="error username-error"></p>
- 
-      <label>Password <span>Choose a password</span> </label>
-      <input type="password" name="password" value="">
-      <p class="error password-error"></p>
- 
-      <input type="submit" name="sign-in" value="Sign In">
-      <p class="success"></p>
-</form>
-
 <?php include_once("includes/footer.php"); ?>

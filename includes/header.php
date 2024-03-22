@@ -8,11 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&family=Poppins:wght@300&family=Roboto&display=swap" rel="stylesheet">
 
 <!-- <link href="path/to/your/custom.css" rel="stylesheet"> -->
 
     <!-- Additional styles -->
+
+
     <link href="css/style.css" rel="stylesheet">
     <style>
         /* Custom styles here */
