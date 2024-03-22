@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["image"])){
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
             // Update user's image path in the database
             $image_path = $target_file;
-            $stmt = $pdo->prepare("UPDATE users SET image_path = :image_path WHERE id = :user_id");
+            $stmt = $pdo->prepare("UPDATE users SET profile_image = :image_path WHERE id = :user_id");
             $stmt->bindParam(":image_path", $image_path, PDO::PARAM_STR);
             $stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
             $stmt->execute();
