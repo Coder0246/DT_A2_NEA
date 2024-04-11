@@ -31,7 +31,7 @@ $productReviews = $stmt_product_reviews->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($products as $product): ?>
             <div class="col-md-4">
                 <div class="card mb-3">
-                    <img src="<?php echo $product['image']; ?>" class="card-img-top" alt="<?php echo $product['name']; ?>">
+                    <img src="images/<?php echo $product['image']; ?>" class="card-img-top" alt="<?php echo $product['name']; ?>">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $product['name']; ?></h5>
                         <p class="card-text"><?php echo $product['description'];?><br>
@@ -45,6 +45,9 @@ $productReviews = $stmt_product_reviews->fetchAll(PDO::FETCH_ASSOC);
         <?php endforeach; ?>
     </div>
 </div>
+
+<!-- Pagination -->
+<!-- Add pagination logic here -->
 
 <div class="container mt-5">
     <h2>Site Reviews</h2>
