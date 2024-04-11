@@ -34,7 +34,10 @@ $productReviews = $stmt_product_reviews->fetchAll(PDO::FETCH_ASSOC);
                     <img src="images/<?php echo $product['image']; ?>" class="card-img-top" alt="<?php echo $product['name']; ?>">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $product['name']; ?></h5>
-                        <p class="card-text"><?php echo $product['description']; ?></p>
+                        <p class="card-text"><?php echo $product['description'];?><br>
+                        price: £ <?php echo $product['price'];?></p>
+                        
+
                         <a href="review_product.php?id=<?php echo $product['id']; ?>" class="btn btn-primary">Review</a>
                     </div>
                 </div>
