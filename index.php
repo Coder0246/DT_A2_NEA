@@ -7,7 +7,7 @@ include_once("db/connection.php");
 
 //new code in college
 //blah
-//blah 1
+//blah 2
 
 $limit = 10;
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
