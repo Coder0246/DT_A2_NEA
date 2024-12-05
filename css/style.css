@@ -1,5 +1,18 @@
   /* Override Bootstrap font-family */
 body {
-    font-family: 'Roboto', sans-serif;
+   /*  font-family: 'Roboto', sans-serif; */
+
+
+  font-family: "Afacad Flux", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+
+    
   
+
+    
+
 }
