@@ -37,15 +37,15 @@ $productReviews = $stmt_product_reviews->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($products as $product): ?>
         <div class="col-md-4">
             <div class="card mb-3">
-                <img src="images/<?php echo $product['image']; ?>" class="card-img-top"
-                    alt="<?php echo $product['name']; ?>">
+                <img src="images/<?php echo htmlspecialchars($product['image']); ?>" class="card-img-top"
+                    alt="<?php echo htmlspecialchars($product['name']); ?>">
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $product['name']; ?></h5>
-                    <p class="card-text"><?php echo $product['description'];?><br>
-                        price: £ <?php echo $product['price'];?></p>
+                    <h5 class="card-title"><?php echo htmlspecialchars($product['name']); ?></h5>
+                    <p class="card-text"><?php echo htmlspecialchars($product['description']); ?><br>
+                        price: £ <?php echo htmlspecialchars($product['price']); ?></p>
 
-
-                    <a href="review_product.php?id=<?php echo $product['id']; ?>" class="btn btn-primary">Review</a>
+                    <a href="add_to_cart.php?product_id=<?php echo htmlspecialchars($product['id']); ?>" class="btn btn-primary">Add to cart</a>
+                    <a href="create_product_review.php?product_id=<?php echo htmlspecialchars($product['id']); ?>" class="btn btn-primary">Review</a>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@ $productReviews = $stmt_product_reviews->fetchAll(PDO::FETCH_ASSOC);
         <div class="carousel-inner">
             <?php foreach ($siteReviews as $key => $review): ?>
             <div class="carousel-item <?php echo $key === 0 ? 'active' : ''; ?>">
-                <h3><?php echo $review['review_text']; ?></h3>
+                <h3><?php echo htmlspecialchars($review['review_text']); ?></h3>
             </div>
             <?php endforeach; ?>
         </div>
@@ -86,10 +86,10 @@ $productReviews = $stmt_product_reviews->fetchAll(PDO::FETCH_ASSOC);
         <div class="col-md-4">
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $review['username']; ?></h5>
-                    <p class="card-text"><?php echo $review['review_text']; ?></p>
+                    <h5 class="card-title"><?php echo htmlspecialchars($review['username']); ?></h5>
+                    <p class="card-text"><?php echo htmlspecialchars($review['review_text']); ?></p>
                     <?php if (!empty($review['review_image'])): ?>
-                    <img src="<?php echo $review['review_image']; ?>" class="card-img-top" alt="Review Image">
+                    <img src="<?php echo htmlspecialchars($review['review_image']); ?>" class="card-img-top" alt="Review Image">
                     <?php endif; ?>
                 </div>
             </div>
@@ -136,14 +136,10 @@ $user_images = $stmt_user_images->fetchAll(PDO::FETCH_COLUMN);
     <div class="row">
         <?php foreach ($user_images as $image): ?>
         <div class="col-md-3">
-            <img src="uploads/<?php echo $image; ?>" alt="User Image" class="img-fluid">
+            <img src="uploads/<?php echo htmlspecialchars($image); ?>" alt="User Image" class="img-fluid">
         </div>
         <?php endforeach; ?>
     </div>
 </div>
-
-
-
-
 
 <?php include_once("includes/footer.php"); ?>
