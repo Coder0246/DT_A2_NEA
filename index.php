@@ -4,6 +4,7 @@ include_once("db/connection.php");
 
 // Pagination setup
 //test March 5th
+//another test
 
 $limit = 10;
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
