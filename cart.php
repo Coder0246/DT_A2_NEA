@@ -10,7 +10,7 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 // Initialize cart items array
-$cart_items =;
+$cart_items = [];
 
 // Check if the cart is not empty
 if (!empty($_SESSION['cart'])) {

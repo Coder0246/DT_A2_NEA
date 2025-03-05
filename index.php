@@ -3,11 +3,7 @@ include_once("includes/header.php");
 include_once("db/connection.php");
 
 // Pagination setup
-// new stuff exciting!!!!!
 
-//new code in college
-//blah
-//blah 3
 
 $limit = 10;
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -31,11 +27,33 @@ $stmt_product_reviews->execute();
 $productReviews = $stmt_product_reviews->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+
+
+
+
 <div class="container mt-5">
     <h2>Products</h2>
     <div class="row">
         <?php foreach ($products as $product): ?>
-        <div class="col-md-4">
+        
+            <div class="card mb-3" style="max-width: 800px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="images/<?php echo htmlspecialchars($product['image']); ?>" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+        
+            <div class="col-md-4">
             <div class="card mb-3">
                 <img src="images/<?php echo htmlspecialchars($product['image']); ?>" class="card-img-top"
                     alt="<?php echo htmlspecialchars($product['name']); ?>">
@@ -51,7 +69,29 @@ $productReviews = $stmt_product_reviews->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <?php endforeach; ?>
     </div>
+
+    <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="images/<?php echo htmlspecialchars($product['image']); ?>" class="img-fluid rounded-start" alt="<?php echo htmlspecialchars($product['name']); ?>">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+  
+
+  
 </div>
+<img src="images/<?php echo htmlspecialchars($product['image']); ?>">
+</div>
+
+
+
 
 <!-- Pagination -->
 <!-- Add pagination logic here -->
